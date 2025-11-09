@@ -1,0 +1,23 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "labels": [
+    "dependencies"
+  ],
+  "dependencyDashboard": true,
+  "packageRules": [
+    {
+      "matchDatasources": ["nuget"],
+      "separateMajorMinor": true,
+      "addLabels": ["nuget"],
+      "rangeStrategy": "bump"
+    },
+    {
+      "matchPaths": ["samples/**"],
+      "groupName": "sample app dependencies",
+      "stabilityDays": 3
+    }
+  ]
+}
