@@ -85,11 +85,7 @@ public class RenderingThroughputBenchmarks
 
         public LargeDocumentLayoutProvider(int lineCount)
         {
-            if (lineCount <= 0)
-            {
-                throw new ArgumentOutOfRangeException(nameof(lineCount));
-            }
-
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(lineCount, nameof(lineCount));
             LineCount = lineCount;
         }
 
