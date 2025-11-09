@@ -12,5 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\TextEdit.Core\TextEdit.Core.csproj" />
+    <ProjectReference Include="..\..\..\src\TextEdit.Rendering\TextEdit.Rendering.csproj" />
   </ItemGroup>
 </Project>

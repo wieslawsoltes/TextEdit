@@ -22,19 +22,21 @@ public sealed class AvaloniaGestureTranslatorTests
     [Fact]
     public void ToEditorModifiersAggregatesFlags()
     {
-        var modifiers = KeyModifiers.Control | KeyModifiers.Shift | KeyModifiers.Function;
+        var modifiers = KeyModifiers.Control | KeyModifiers.Shift | KeyModifiers.Alt | KeyModifiers.Meta;
         var result = AvaloniaGestureTranslator.ToEditorModifiers(modifiers);
 
         Assert.True(result.HasFlag(EditorKeyModifiers.Control));
         Assert.True(result.HasFlag(EditorKeyModifiers.Shift));
-        Assert.True(result.HasFlag(EditorKeyModifiers.Function));
-        Assert.False(result.HasFlag(EditorKeyModifiers.Alt));
+        Assert.True(result.HasFlag(EditorKeyModifiers.Alt));
+        Assert.True(result.HasFlag(EditorKeyModifiers.Meta));
+        Assert.False(result.HasFlag(EditorKeyModifiers.Function));
+        Assert.False(result.HasFlag(EditorKeyModifiers.Super));
     }
 
     [Fact]
     public void ToEditorPhysicalKeyUsesSymbol()
     {
-        var result = AvaloniaGestureTranslator.ToEditorPhysicalKey(PhysicalKey.KeyA);
-        Assert.Equal("KeyA", result.Code);
+        var result = AvaloniaGestureTranslator.ToEditorPhysicalKey(PhysicalKey.A);
+        Assert.Equal("A", result.Code);
     }
 }

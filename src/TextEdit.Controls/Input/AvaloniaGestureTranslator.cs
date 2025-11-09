@@ -48,8 +48,7 @@ internal static class AvaloniaGestureTranslator
     {
         Key.Back => EditorKey.Backspace,
         Key.Tab => EditorKey.Tab,
-        Key.Enter => EditorKey.Enter,
-        Key.Return => EditorKey.Enter,
+        Key.Enter or Key.Return => EditorKey.Enter,
         Key.Escape => EditorKey.Escape,
         Key.Space => EditorKey.Space,
 

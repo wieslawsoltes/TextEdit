@@ -61,6 +61,7 @@ public class CodeEditorControl : Control
     /// <inheritdoc/>
     protected override void OnKeyDown(KeyEventArgs e)
     {
+        ArgumentNullException.ThrowIfNull(e);
         base.OnKeyDown(e);
         if (e.Handled)
         {
@@ -82,6 +83,7 @@ public class CodeEditorControl : Control
     /// <inheritdoc/>
     protected override void OnKeyUp(KeyEventArgs e)
     {
+        ArgumentNullException.ThrowIfNull(e);
         base.OnKeyUp(e);
         if (e.Handled)
         {
@@ -103,6 +105,7 @@ public class CodeEditorControl : Control
     /// <inheritdoc/>
     protected override void OnTextInput(TextInputEventArgs e)
     {
+        ArgumentNullException.ThrowIfNull(e);
         base.OnTextInput(e);
         if (e.Handled)
         {
